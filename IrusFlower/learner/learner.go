@@ -2,7 +2,6 @@ package learner
 
 import (
 	"fmt"
-	"math/big"
 	"math/rand"
 )
 
@@ -44,12 +43,6 @@ func (l *Learner) Predict(i Irus) float64 {
 }
 
 func (l *Learner) getSpecies(sepLen, sepWid, petLen, petWid float64) float64 {
-
-	f := big.NewFloat(l.bias)
-	f.Add(f, big.NewFloat(sepLen*l.slw))
-	f.Add(f, big.NewFloat(sepWid*l.sww))
-	f.Add(f, big.NewFloat(petLen*l.plw))
-	f.Add(f, big.NewFloat(petWid*l.pww))
 
 	val :=
 		(sepLen*l.slw +
